@@ -3,7 +3,7 @@ import StyledValidationMessage from './style';
 
 const ValidationMessage = props => {
   const { message } = props;
-  const getSuccessMessage = msg => msg === 'Form is valid';
+  const getSuccessMessage = msg => msg === 'You just added a new bike';
 
   return (
     <StyledValidationMessage successMessage={getSuccessMessage(message)}>

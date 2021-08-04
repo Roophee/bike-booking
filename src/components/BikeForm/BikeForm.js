@@ -57,7 +57,7 @@ const BikeForm = props => {
     if (Number.parseInt(price, 10) < 0.01) {
       return 'Price should be more then 0.01 UAH/hr.';
     }
-    return 'Form is valid';
+    return 'You just added a new bike';
   }, [name, type, price, id, wheelSize, color, bikeTypes]);
 
   const nameHandler = useCallback(
@@ -124,7 +124,7 @@ const BikeForm = props => {
       event.preventDefault();
       const validationResult = validateForm();
       setMessageOnValidation(validationResult);
-      if (validationResult === 'Form is valid') {
+      if (validationResult === 'You just added a new bike') {
         localforage.setItem(id, {
           name,
           type,
