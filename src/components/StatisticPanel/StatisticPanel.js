@@ -3,10 +3,8 @@ import StyledStatisticPanel from './style';
 
 const StatisticPanel = props => {
   const { bikes } = props;
-  const getPriceForBusy = arr => {
-    const newArr = arr.filter(item => item.status !== 'available');
-    const totalPrice = newArr.reduce((accum, elem) => accum + Number.parseInt(elem.price, 10), 0);
-    return totalPrice;
+  const getAveragePrice = arr => {
+    return arr.reduce((accum, elem) => accum + Number.parseInt(elem.price, 10), 0);
   };
 
   return (
@@ -33,7 +31,7 @@ const StatisticPanel = props => {
       <p>
         <span> Average bike cost:&nbsp;</span>
         <span>
-          <strong>{bikes && getPriceForBusy(bikes).toFixed(2)} UAH/hr.</strong>
+          <strong>{(getAveragePrice(bikes)/bikes.length).toFixed(2)} UAH/hr.</strong>
         </span>
       </p>
     </StyledStatisticPanel>
