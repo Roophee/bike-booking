@@ -24,7 +24,7 @@
     "no-nested-ternary": "warn",
     "no-underscore-dangle": "warn",
     "react/no-unescaped-entities": "warn",
-    "react/destructuring-assignment": "warn",
+    "react/destructuring-assignment": "off",
     "react/jsx-props-no-spreading": "warn",
     "react/no-array-index-key": "warn",
     "import/prefer-default-export": "off",
