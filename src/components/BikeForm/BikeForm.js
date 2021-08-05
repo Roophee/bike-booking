@@ -43,7 +43,7 @@ const BikeForm = props => {
       return 'Name length should be more than 4 characters';
     }
     if (!bikeTypes.includes(type.toLowerCase())) {
-      return 'Type of bike is incorrect. There is available types of bikes: road, cruiser, fixed gear, mountain, bmx, touring, recumbent, folding, utility'
+      return 'Type of bike is incorrect. There is available types of bikes: road, cruiser, fixed gear, mountain, bmx, touring, recumbent, folding, utility';
     }
     if (color.length < 3) {
       return 'Color length should be more than 3 characters';

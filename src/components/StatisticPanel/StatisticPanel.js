@@ -4,7 +4,9 @@ import StyledStatisticPanel from './style';
 const StatisticPanel = props => {
   const { bikes } = props;
   const getAveragePrice = arr => {
-    return arr.filter(item => item.status !== 'unavailable').reduce((accum, elem) => accum + Number.parseInt(elem.price, 10), 0);
+    return arr
+      .filter(item => item.status !== 'unavailable')
+      .reduce((accum, elem) => accum + Number.parseInt(elem.price, 10), 0);
   };
 
   return (
@@ -31,7 +33,7 @@ const StatisticPanel = props => {
       <p>
         <span> Average bike cost:&nbsp;</span>
         <span>
-          <strong>{(getAveragePrice(bikes)/bikes.length).toFixed(2)} UAH/hr.</strong>
+          <strong>{(getAveragePrice(bikes) / bikes.length).toFixed(2)} UAH/hr.</strong>
         </span>
       </p>
     </StyledStatisticPanel>
