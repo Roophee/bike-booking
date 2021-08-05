@@ -4,7 +4,7 @@ import StyledStatisticPanel from './style';
 const StatisticPanel = props => {
   const { bikes } = props;
   const getAveragePrice = arr => {
-    return arr.reduce((accum, elem) => accum + Number.parseInt(elem.price, 10), 0);
+    return arr.filter(item => item.status !== 'unavailable').reduce((accum, elem) => accum + Number.parseInt(elem.price, 10), 0);
   };
 
   return (
@@ -25,7 +25,7 @@ const StatisticPanel = props => {
       <p>
         <span> Booked Bikes:&nbsp;</span>
         <span>
-          <strong>{bikes.filter(item => item.status !== 'available').length}</strong>
+          <strong>{bikes.filter(item => item.status === 'busy').length}</strong>
         </span>
       </p>
       <p>

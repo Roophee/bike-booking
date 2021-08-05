@@ -30,6 +30,7 @@ const BikeItem = props => {
           <select name="status" id="status" value={bike.status} onChange={onStatusChange}>
             <option value="busy">Busy</option>
             <option value="available">Available</option>
+            <option value="unavailable">Unavailable</option>
           </select>
         </div>
         <div className="bikeItem__price">{Number.parseInt(bike.price, 10).toFixed(2)} UAH/hr.</div>
